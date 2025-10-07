@@ -1,0 +1,15 @@
+/* Tailwind v4 entry */
+@import "tailwindcss";
+
+/* Optional: custom styles that Tailwind shouldn’t purge */
+@layer components {
+  .feature-card {
+    @apply bg-white p-6 rounded-2xl shadow hover:shadow-lg transition;
+  }
+  .icon-circle {
+    @apply text-3xl mb-3;
+  }
+  .form-input {
+    @apply w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#D99A26];
+  }
+}

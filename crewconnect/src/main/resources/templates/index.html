@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1" >
+    <title>CrewConnect — Connect Your Team</title>
+    <meta name="description" content="CrewConnect — Connect your crew, simplify scheduling, and empower collaboration." >
+
+    <link rel="stylesheet" href="/crewconnect/src/main/resources/static/css/style.css" th:href="@{/css/style.css}" >
+
+</head>
+<body class="bg-[#F9F9F9] text-[#2C2C2C] font-inter antialiased">
+
+
+<!-- Navbar -->
+<header class="sticky top-0 z-40 bg-white/80 backdrop-blur border-b border-gray-200" aria-label="Site header">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <a th:href="@{/}" class="text-2xl font-bold text-[#0D3B66]">
+            <span class="text-[#D99A26]">Crew</span>Connect
+        </a>
+        <nav class="hidden md:flex gap-6 text-base font-medium" aria-label="Desktop navigation">
+            <a th:href="@{/}" class="hover:text-[#D99A26]">Home</a>
+            <a href="#features" class="hover:text-[#D99A26]">Features</a>
+            <a th:href="@{/login}" class="hover:text-[#D99A26]">Login</a>
+            <a th:href="@{/admin/register}" class="hover:text-[#D99A26]">Admin Register</a>
+            <a href="#contact" class="hover:text-[#D99A26]">Contact</a>
+        </nav>
+        <button type="button" 
+                class="md:hidden" 
+                onclick="toggleMenu()" 
+                aria-label="Toggle mobile menu"
+                aria-controls="mobileMenu"
+                aria-expanded="false">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" /></svg>
+        </button>
+    </div>
+    <div id="mobileMenu" class="hidden border-t border-gray-200 md:hidden bg-white">
+        <nav class="flex flex-col px-6 py-4 space-y-2" aria-label="Mobile navigation">
+            <a th:href="@{/}" class="hover:text-[#D99A26]">Home</a>
+            <a href="#features" class="hover:text-[#D99A26]">Features</a>
+            <a th:href="@{/login}" class="hover:text-[#D99A26]">Login</a>
+            <a th:href="@{/admin/register}" class="hover:text-[#D99A26]">Admin Register</a>
+            <a href="#contact" class="hover:text-[#D99A26]">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<!-- Hero vsection -->
+<section class="relative overflow-hidden bg-gradient-to-br from-[#0D3B66] via-[#0C2C50] to-[#2C2C2C] text-white py-24">
+    <div class="max-w-7xl mx-auto px-6 text-center md:text-left grid md:grid-cols-2 gap-10 items-center">
+        <div>
+            <h1 class="text-5xl font-extrabold leading-tight mb-4">
+                Reconnect Your Team. <br> One Coffee Chat at a Time.
+            </h1>
+            <p class="text-lg opacity-90 max-w-lg">
+                CrewConnect helps employees build real connections in remote and hybrid workplaces through smart, automated virtual coffee breaks and team-bonding sessions.
+            </p>
+            <div class="mt-8 flex flex-wrap gap-4">
+                <a th:href="@{/login}" class="bg-[#D99A26] text-white px-6 py-3 rounded-xl font-semibold hover:bg-[#C48A1F]">Login</a>
+                <a th:href="@{/admin/register}" class="bg-white text-[#0D3B66] px-6 py-3 rounded-xl font-semibold hover:bg-gray-100">Admin Create User</a>
+            </div>
+        </div>
+        <div class="hidden md:block reveal">
+            <img src="/images/dashboard-preview.png" th:src="@{/images/dashboard-preview.png}" alt="CrewConnect dashboard preview" class="rounded-2xl shadow-2xl opacity-90">
+        </div>
+    </div>
+</section>
+
+<!-- Features -->
+<section id="features" class="py-20 bg-[#F9F9F9]">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold mb-10 text-[#0D3B66]">Core Features</h2>
+        <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-8">
+            <div class="feature-card">
+                <div class="icon-circle">🕓</div>
+                <h3 class="font-semibold text-lg">Availability Matching</h3>
+                <p class="text-sm opacity-80 mt-2">Pairs employees based on overlapping availability.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon-circle">☕</div>
+                <h3 class="font-semibold text-lg">Virtual Coffee Chats</h3>
+                <p class="text-sm opacity-80 mt-2">Facilitates short, informal meetings to strengthen workplace relationships.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon-circle">🧭</div>
+                <h3 class="font-semibold text-lg">Admin Tools</h3>
+                <p class="text-sm opacity-80 mt-2">Admins can register users, view participation, and manage schedules.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon-circle">🔔</div>
+                <h3 class="font-semibold text-lg">Reminders &amp; Reports</h3>
+                <p class="text-sm opacity-80 mt-2">Automatic notifications and engagement insights for employees and management.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Mission -->
+<section class="py-20 bg-white">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold text-[#0D3B66] mb-4">Our Mission</h2>
+        <p class="text-lg text-gray-700 leading-relaxed">
+            CrewConnect was created to combat social isolation in remote and hybrid workplaces. 
+            By connecting coworkers for meaningful coffee chats and casual conversations, we help restore 
+            the sense of belonging, camaraderie, and collaboration that drives healthy company culture.
+        </p>
+    </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="py-20 bg-[#F9F9F9]">
+    <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-10">
+        <div>
+            <h2 class="text-2xl font-bold text-[#0D3B66] mb-4">Get in Touch</h2>
+            <p class="text-gray-600 mb-6">    Interested in bringing CrewConnect to your organization? Reach out to our team we’d love to connect.</p>
+            <p class="font-medium text-gray-700">📧 <a href="mailto:info@crewconnect.com" class="text-[#D99A26] hover:underline">info@crewconnect.com</a></p>
+        </div>
+        <form class="bg-white p-6 rounded-2xl shadow space-y-4" onsubmit="event.preventDefault(); alert('Message sent!');">
+            <div>
+                <label for="name" class="block text-sm font-semibold text-gray-700">Name</label>
+                <input type="text" id="name" class="form-input" placeholder="Your name" required>
+            </div>
+            <div>
+                <label for="email" class="block text-sm font-semibold text-gray-700">Email</label>
+                <input type="email" id="email" class="form-input" placeholder="you@example.com" required>
+            </div>
+            <div>
+                <label for="message" class="block text-sm font-semibold text-gray-700">Message</label>
+                <textarea id="message" rows="4" class="form-input" placeholder="Your message..." required></textarea>
+            </div>
+            <button type="submit" class="bg-[#D99A26] text-white px-6 py-2.5 rounded-xl font-semibold hover:bg-[#C48A1F]">Send Message</button>
+        </form>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="py-8 bg-[#0D3B66] text-white text-center">
+    <p class="text-sm opacity-90">© 2025 CrewConnect</p>
+</footer>
+
+<script th:src="@{/js/main.js}"></script>
+</body>
+</html>
